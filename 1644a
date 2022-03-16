@@ -1,0 +1,4 @@
+T = int(raw_input())
+for _ in xrange(T):
+    s = raw_input().strip()
+    print "YES" if all(s.find(c) < s.find(c.upper()) for c in 'rgb') else "NO"
