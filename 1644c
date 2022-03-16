@@ -1,0 +1,14 @@
+I=lambda:map(int,input().split())
+for _ in "*"*int(input()):
+	n,x=I()
+	d=[(-10**9)]*(n+1)
+	a=[*I()]
+	z=[]
+	for j in range(0,n):
+		o=0
+		for k in range(j,n):o+=a[k];d[k-j+1]=max(d[k-j+1],o)
+	for i in range(n+1):
+		r=0
+		for j in range(1,n+1):r=max(r,d[j]+(min(i,j)*x))
+		z+=[r]
+	print(*z)
